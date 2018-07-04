@@ -21,5 +21,5 @@ from shortener.views import HomeView, UrlRedirectView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
-    url(r'^b/(?P<shortcode>[\w-]+)$', UrlRedirectView.as_view(), name='scode'), 
+    url(r'^(?P<shortcode>[\w-]+)$', UrlRedirectView.as_view(), name='scode'), 
 ]

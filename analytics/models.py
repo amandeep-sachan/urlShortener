@@ -17,7 +17,7 @@ class ClickEventManager(models.Manager):
         return None
 
 class ClickEvent(models.Model):
-    django_url = models.OneToOneField(DjangoURL)
+    django_url = models.OneToOneField(DjangoURL, null=True, on_delete=models.SET_NULL)
     count = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add = True)
     updated = models.DateTimeField(auto_now = True)
